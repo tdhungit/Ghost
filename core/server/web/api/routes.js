@@ -187,6 +187,13 @@ module.exports = function apiRoutes() {
         api.http(api.uploads.add)
     );
 
+    apiRouter.post('/uploads/video',
+        mw.authenticatePrivate,
+        upload.single('uploadvideo'),
+        validation.upload({type: 'videos'}),
+        api.http(api.uploads.add)
+    );
+
     // ## Invites
     apiRouter.get('/invites', mw.authenticatePrivate, api.http(api.invites.browse));
     apiRouter.get('/invites/:id', mw.authenticatePrivate, api.http(api.invites.read));
