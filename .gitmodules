@@ -4,3 +4,4 @@
 [submodule "core/client"]
 	path = core/client
 	url = https://github.com/tdhungit/Ghost-Admin.git
+	branch = master
