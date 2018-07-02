@@ -5,7 +5,10 @@ var MarkdownIt = require('markdown-it'),
         linkify: true
     })
         .use(require('markdown-it-footnote'))
-        .use(require('markdown-it-html5-embed'))
+        .use(require('markdown-it-html5-embed'), {
+            useImageSyntax: true,
+            useLinkSyntax: true,
+        })
         .use(require('markdown-it-lazy-headers'))
         .use(require('markdown-it-mark'))
         .use(function namedHeaders(md) {
